@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import styled from "@emotion/styled";
 import { useStore } from "../../store/useStore";
 import { PLANETS_DATA } from "../../datas/planetsData";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useTexture } from "@react-three/drei";
+import { Line, useTexture } from "@react-three/drei";
 import Image from "next/image";
+import { EllipseCurve } from "three";
 
 function Sphere(props) {
 	const { imageURL } = useStore();
@@ -19,6 +20,36 @@ function Sphere(props) {
 			<sphereGeometry args={[1.1, 35, 35]} />
 			<meshStandardMaterial map={colorMap} />
 		</mesh>
+	);
+}
+
+function SphereWithRings(props) {
+	const { imageURL } = useStore();
+	const colorMap = useTexture(imageURL);
+	const colorRings = useTexture("./Rings.png");
+	const ref = useRef();
+	const curvePoints = useMemo(
+		() =>
+			new EllipseCurve(0, 0.5, 2.5, 0.9, 0, 2 * Math.PI, false, 0).getPoints(
+				50,
+			),
+		[],
+	);
+	useFrame((state) => {
+		ref.current.rotation.y = state.clock.getElapsedTime() / 8;
+	});
+
+	return (
+		<group {...props}>
+			<mesh position={[0, 0, 0]} ref={ref}>
+				<sphereGeometry args={[1.1, 35, 35]} />
+				<meshStandardMaterial map={colorMap} />
+			</mesh>
+			<mesh scale={0.5} position={[0, 0.05, 0.8]} rotation={[1.7, 0.1, 0]}>
+				<torusGeometry args={[1.8, 0.1, 12, 50]} />
+				<meshStandardMaterial map={colorRings} />
+			</mesh>
+		</group>
 	);
 }
 
@@ -110,10 +141,17 @@ function Presentation() {
 										<h1>Chargement...</h1>
 									)}
 									<div className="title-image">
-										<Canvas className="canvas">
-											<ambientLight intensity={0.8} />
-											<Sphere position={[0, 0, 3]} />
-										</Canvas>
+										{selectedPlanet !== "saturne" ? (
+											<Canvas className="canvas">
+												<ambientLight intensity={0.8} />
+												<Sphere position={[0, 0, 3]} />
+											</Canvas>
+										) : (
+											<Canvas className="canvas">
+												<ambientLight intensity={0.8} />
+												<SphereWithRings position={[0, 0, 3]} />
+											</Canvas>
+										)}
 									</div>
 								</div>
 								<br />
@@ -212,8 +250,8 @@ function Presentation() {
 									)}
 								</div>
 								<div className="information">
-									{distance ? (
-										<h2 style={{ padding: "0 25px" }}>
+									{description ? (
+										<h2 id="description">
 											Description : <span>{description}</span>
 										</h2>
 									) : (
@@ -343,6 +381,16 @@ const PresentationGlobal = styled.div`
 				@media (max-width: 830px) {
 					font-size: 1rem;
 				}
+			}
+		}
+
+		#description {
+			@media (max-width: 1400px) {
+				width: 300px;
+			}
+
+			h2 {
+				padding: 0 25px;
 			}
 		}
 	}

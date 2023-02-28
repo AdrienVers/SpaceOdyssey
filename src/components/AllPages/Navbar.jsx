@@ -94,7 +94,11 @@ function Navbar() {
 				<LinkItem href="/satellites">
 					<span>Satellites</span>
 				</LinkItem>
-				<LinkItem href="/" title="https://github.com/AdrienVers">
+				<LinkItem
+					href="https://github.com/AdrienVers"
+					target="_blank"
+					title="https://github.com/AdrienVers"
+				>
 					<span>Contact</span>
 				</LinkItem>
 			</div>
