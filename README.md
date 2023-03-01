@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Concours : Utilisation d'une API REST dans une création web 
 
-## Getting Started
+**Début du concours :** Lundi 20 Février, 10h00. 
 
-First, run the development server:
+**Fin des participations :** Dimanche 5 Mars, 23h59.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Concours organisé par [Enzo Ustariz](https://www.ecole-du-web.net/).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Description du projet réalisé :
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Pour ce concours, j'ai choisi de créer une modélisation 3D du système solaire, offrant la possibilité d'accéder à des informations sur les différentes planètes en les sélectionnant ou en les recherchant via une barre de navigation.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Pour le développement du projet, j'ai utilisé le framework React/NextJS pour le front-end, Zustand pour la gestion des états, du CSS classique pour la modélisation du système solaire, et React-Three-Fiber/ThreeJS pour la visualisation 3D des planètes dans la rubrique information. 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Malheureusement, aucune API gratuite et non limitée en requête ne répondait à mes besoins en termes de données sur les planètes et les télescopes. J'ai donc créé ma propre API pour obtenir les données nécessaires à la réalisation de ce projet.
 
-## Learn More
+### Partage :
 
-To learn more about Next.js, take a look at the following resources:
+Pour ceux qui seraient intéressés, voici une liste des API / base de données relatives à l’astronomie : 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [The Space Devs](https://thespacedevs.com/llapi)
+- [NASA Open APIs](https://api.nasa.gov/)
+- [OpenData du Système solaire](https://api.le-systeme-solaire.net/)
+- [Horizons API - NASA](https://ssd.jpl.nasa.gov/horizons/app.html#/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Aperçu :
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![SpaceOdyssey](https://user-images.githubusercontent.com/59047879/222121114-ba7086f8-6a64-48af-aca1-0993ba707770.png)
