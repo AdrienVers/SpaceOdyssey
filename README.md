@@ -16,7 +16,7 @@ Malheureusement, aucune API gratuite et non limitée en requête ne répondait �
 
 ### Partage :
 
-Pour ceux qui seraient intéressé, voici une liste des API / base de données relatives à l’astronomie : 
+Pour ceux qui seraient intéressés, voici une liste des API / base de données relatives à l’astronomie : 
 
 - [The Space Devs](https://thespacedevs.com/llapi)
 - [NASA Open APIs](https://api.nasa.gov/)
