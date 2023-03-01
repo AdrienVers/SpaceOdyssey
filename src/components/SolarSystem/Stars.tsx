@@ -54,11 +54,13 @@ const spiral = keyframes`
 	width: 0.1em;
 	height: 0.1em;
 	transform: translateX(-900px);
+	bottom: 0;
 }
 100% {
 	width: 0.5em;
 	height: 0.5em;
 	transform: translateX(-50%);
+	bottom: 10px;
 }
 `;
 
@@ -80,7 +82,7 @@ const StarsGlobal = styled.div`
 
 			.ET {
 				position: absolute;
-				bottom: 10px;
+				bottom: -25px;
 				left: 50%;
 				width: 0.5em;
 				height: 0.5em;
