@@ -1,7 +1,7 @@
 import React, { useRef, useMemo } from "react";
 import styled from "@emotion/styled";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Line, useTexture } from "@react-three/drei";
+import { Line, useTexture, Stars } from "@react-three/drei";
 import { EllipseCurve } from "three";
 import { useStore } from "../../store/useStore";
 
@@ -235,6 +235,7 @@ function Geocentric() {
 			<Canvas camera={{ position: [0, 0, 10] }}>
 				<ambientLight intensity={0.8} />
 				<GeoSystem />
+				<Stars saturation={0.8} count={350} speed={0.4} />
 			</Canvas>
 		</GeocentricGlobal>
 	);

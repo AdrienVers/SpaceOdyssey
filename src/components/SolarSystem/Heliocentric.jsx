@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { keyframes } from "@emotion/react";
 import { useStore } from "../../store/useStore";
 import { PLANETS_DATA } from "../../datas/planetsData";
+import { keyframes } from "@emotion/react";
 import Image from "next/image";
 import Sun from "./Sun";
 
@@ -58,6 +58,7 @@ function Heliocentric() {
 								</div>
 							))}
 							<Sun />
+							
 						</div>
 					</div>
 				</div>
@@ -225,6 +226,8 @@ const HeliocentricGlobal = styled.div`
 							}
 						}
 					}
+
+
 
 					.sun {
 						position: absolute;

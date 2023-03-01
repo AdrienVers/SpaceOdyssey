@@ -3,9 +3,8 @@ import styled from "@emotion/styled";
 import { useStore } from "../../store/useStore";
 import { PLANETS_DATA } from "../../datas/planetsData";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Line, useTexture } from "@react-three/drei";
+import { useTexture } from "@react-three/drei";
 import Image from "next/image";
-import { EllipseCurve } from "three";
 
 function Sphere(props) {
 	const { imageURL } = useStore();
@@ -28,13 +27,7 @@ function SphereWithRings(props) {
 	const colorMap = useTexture(imageURL);
 	const colorRings = useTexture("./Rings.png");
 	const ref = useRef();
-	const curvePoints = useMemo(
-		() =>
-			new EllipseCurve(0, 0.5, 2.5, 0.9, 0, 2 * Math.PI, false, 0).getPoints(
-				50,
-			),
-		[],
-	);
+
 	useFrame((state) => {
 		ref.current.rotation.y = state.clock.getElapsedTime() / 8;
 	});

@@ -37,4 +37,7 @@ export const useStore = create((set) => ({
 	description: null,
 	setDescription: (planetDescription) =>
 		set({ description: planetDescription }),
+
+	openSidebar: false,
+	setOpenSidebar: (openS) => set(() => ({ openSidebar: openS })),
 }));

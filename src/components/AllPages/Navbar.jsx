@@ -11,7 +11,8 @@ function Navbar() {
 	const [showFire, setShowFire] = useState(false);
 	const [correctPlanet, setCorrectPlanet] = useState(false);
 
-	const { setSelectedPlanet, setOpenModal } = useStore();
+	const { setSelectedPlanet, setOpenModal, openSidebar, setOpenSidebar } =
+		useStore();
 
 	const searchInputRef = useRef(null);
 
@@ -102,8 +103,40 @@ function Navbar() {
 					<span>Contact</span>
 				</LinkItem>
 			</div>
-			<div className="hamburger-menu">
+			<div
+				className="hamburger-menu"
+				onClick={() => setOpenSidebar(!openSidebar)}
+			>
 				<i className="fa-solid fa-bars" />
+			</div>
+			<div
+				className={`sidebar ${openSidebar ? "active" : "inactive"}`}
+				onClick={() => setOpenSidebar(false)}
+			>
+				<div className="menu-container">
+					<div
+						className={`dropdown-menu ${openSidebar ? "active" : "inactive"}`}
+						onClick={() => setOpenSidebar(false)}
+					>
+						<LinkSidebar href="/">
+							<span>Système solaire</span>
+						</LinkSidebar>
+						<LinkSidebar
+							href="/satellites"
+							onClick={() => setOpenSidebar(false)}
+						>
+							<span>Satellites</span>
+						</LinkSidebar>
+						<LinkSidebar
+							href="https://github.com/AdrienVers"
+							target="_blank"
+							title="https://github.com/AdrienVers"
+							onClick={() => setOpenSidebar(false)}
+						>
+							<span>Contact</span>
+						</LinkSidebar>
+					</div>
+				</div>
 			</div>
 		</NavbarGlobal>
 	);
@@ -122,6 +155,7 @@ const NavbarGlobal = styled.div`
 	font-size: 1.4rem;
 	position: fixed;
 	z-index: 100;
+	box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.5) inset;
 
 	.left {
 		width: 20%;
@@ -180,10 +214,6 @@ const NavbarGlobal = styled.div`
 
 			@media (max-width: 530px) {
 				display: none;
-			}
-
-			&:hover {
-				cursor: pointer;
 			}
 		}
 	}
@@ -305,6 +335,10 @@ const NavbarGlobal = styled.div`
 	.hamburger-menu {
 		display: none;
 
+		&:hover {
+			cursor: pointer;
+		}
+
 		@media (max-width: 1300px) {
 			display: flex;
 			align-items: center;
@@ -330,6 +364,58 @@ const NavbarGlobal = styled.div`
 			width: 20%;
 			font-size: 1.3rem;
 		}
+	}
+
+	.sidebar {
+		margin: 0;
+		position: absolute;
+		top: 65px;
+		height: calc(100vh - 65px);
+		z-index: 999;
+		right: 0;
+
+		.dropdown-menu {
+			position: absolute;
+			height: calc(100vh - 65px);
+			background-color: white;
+			width: 30%;
+			right: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			padding: 10px 0;
+
+			@media (max-width: 600px) {
+				width: 100%;
+			}
+		}
+	}
+
+	.sidebar.active {
+		background-color: rgba(0, 0, 0, 0.8);
+		visibility: visible;
+		transition: 0.5s ease-in-out;
+		opacity: 1;
+		width: 100%;
+		color: black;
+	}
+
+	.sidebar.inactive {
+		background-color: transparent;
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.5s ease-in-out;
+		width: 30%;
+		color: black;
+	}
+`;
+
+const LinkSidebar = styled(Link)`
+	padding: 10px 15px;
+
+	&:hover {
+		color: rgb(205, 151, 89);
 	}
 `;
 
