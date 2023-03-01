@@ -1,11 +1,10 @@
 ## Concours : Utilisation d'une API REST dans une création web 
 
-### Détails : 
-
 #### Début du concours : Lundi 20 Février, 10h00. 
 #### Fin des participations : Dimanche 5 Mars, 23h59.
 
 ##### Concours organisé par Enzo Ustariz.
+
 
 ### Description du projet réalisé :
 
