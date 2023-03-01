@@ -6,6 +6,10 @@ import { keyframes } from "@emotion/react";
 import Image from "next/image";
 import Sun from "./Sun";
 
+type AnimationProps = {
+	openModal: boolean;
+};
+
 function Heliocentric() {
 	const { setSelectedPlanet, openModal, setOpenModal } = useStore();
 
@@ -58,7 +62,6 @@ function Heliocentric() {
 								</div>
 							))}
 							<Sun />
-							
 						</div>
 					</div>
 				</div>
@@ -89,7 +92,7 @@ const orbitCorrection = keyframes`
 }
 `;
 
-const HeliocentricGlobal = styled.div`
+const HeliocentricGlobal = styled.div<AnimationProps>`
 	font-size: 0.58rem;
 	display: flex;
 	flex-direction: row;
@@ -226,8 +229,6 @@ const HeliocentricGlobal = styled.div`
 							}
 						}
 					}
-
-
 
 					.sun {
 						position: absolute;

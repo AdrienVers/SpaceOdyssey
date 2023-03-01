@@ -7,8 +7,23 @@ import Saturne from "../assets/Saturne.png";
 import Uranus from "../assets/Uranus.png";
 import Neptune from "../assets/Neptune.png";
 import Image from "../assets/image.png";
+import { StaticImageData } from "next/image";
 
-export const PLANETS_DATA = [
+interface PlanetsData {
+	id: number;
+	nameId: string;
+	name: string;
+	revolution: number;
+	color: string;
+	radius: number;
+	orbit: number;
+	originTop: number;
+	originLeft: number;
+	zIndex: number;
+	image: StaticImageData;
+}
+
+export const PLANETS_DATA: PlanetsData[] = [
 	{
 		id: 1001,
 		nameId: "mercure",

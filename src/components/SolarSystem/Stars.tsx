@@ -5,7 +5,7 @@ import Image from "next/image";
 import { keyframes } from "@emotion/react";
 
 function Stars() {
-	const [star, setStar] = useState(false);
+	const [star, setStar] = useState<boolean>(false);
 
 	return (
 		<StarsGlobal>

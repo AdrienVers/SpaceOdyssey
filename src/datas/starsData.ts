@@ -1,4 +1,12 @@
-export const STARS_DATA = [
+interface StarsData {
+	id: number;
+	top: string;
+	left: string;
+	radius: string;
+	boxShadow: string;
+}
+
+export const STARS_DATA: StarsData[] = [
 	{
 		id: 10001,
 		top: "-1.2em",

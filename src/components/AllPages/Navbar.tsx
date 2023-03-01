@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, ChangeEvent, MutableRefObject } from "react";
 import styled from "@emotion/styled";
 import Logo from "../../assets/Logo.png";
 import Image from "next/image";
@@ -6,17 +6,24 @@ import { PLANETS_DATA } from "../../datas/planetsData";
 import { useStore } from "../../store/useStore";
 import Link from "next/link";
 
+type PlanetsData = {
+	id: number;
+	nameId: string;
+	name: string;
+};
+
 function Navbar() {
-	const [planets, setPlanets] = useState([]);
-	const [showFire, setShowFire] = useState(false);
-	const [correctPlanet, setCorrectPlanet] = useState(false);
+	const [planets, setPlanets] = useState<Array<PlanetsData>>([]);
+	const [showFire, setShowFire] = useState<boolean>(false);
+	const [correctPlanet, setCorrectPlanet] = useState<boolean>(false);
 
 	const { setSelectedPlanet, setOpenModal, openSidebar, setOpenSidebar } =
 		useStore();
 
-	const searchInputRef = useRef(null);
+	const searchInputRef: MutableRefObject<HTMLInputElement | null> =
+		useRef(null);
 
-	const handleInputChange = (event) => {
+	const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const searchValue = event.target.value.toLowerCase();
 
 		const filteredWithFirstLetters = PLANETS_DATA.filter((item) => {
@@ -52,10 +59,12 @@ function Navbar() {
 		}
 	};
 
-	const handleSelectedPlanet = (planetName) => {
+	const handleSelectedPlanet = (planetName: string) => {
 		setPlanets([]);
 		setSelectedPlanet(planetName);
-		searchInputRef.current.value = planetName;
+		if (searchInputRef.current !== null) {
+			searchInputRef.current.value = planetName;
+		}
 		setOpenModal(true);
 		setShowFire(true);
 		setCorrectPlanet(true);

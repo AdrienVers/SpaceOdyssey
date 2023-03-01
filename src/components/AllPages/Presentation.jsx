@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "@emotion/styled";
 import { useStore } from "../../store/useStore";
 import { PLANETS_DATA } from "../../datas/planetsData";
@@ -25,7 +25,7 @@ function Sphere(props) {
 function SphereWithRings(props) {
 	const { imageURL } = useStore();
 	const colorMap = useTexture(imageURL);
-	const colorRings = useTexture("./Rings.png");
+	const colorRings = useTexture("./rings.png");
 	const ref = useRef();
 
 	useFrame((state) => {
