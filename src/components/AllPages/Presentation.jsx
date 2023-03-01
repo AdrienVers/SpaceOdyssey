@@ -25,7 +25,7 @@ function Sphere(props) {
 function SphereWithRings(props) {
 	const { imageURL } = useStore();
 	const colorMap = useTexture(imageURL);
-	const colorRings = useTexture("./rings.png");
+	const colorRings = useTexture("./saturn-rings.png");
 	const ref = useRef();
 
 	useFrame((state) => {
