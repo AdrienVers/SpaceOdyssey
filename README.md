@@ -10,7 +10,7 @@ Concours organisé par [Enzo Ustariz](https://www.ecole-du-web.net/).
 
 Pour ce concours, j'ai choisi de créer une modélisation 3D du système solaire, offrant la possibilité d'accéder à des informations sur les différentes planètes en les sélectionnant ou en les recherchant via une barre de navigation.
 
-Pour le développement de mon projet, j'ai utilisé le framework React/NextJS pour le front-end, Zustand pour la gestion des états, du CSS classique pour la modélisation du système solaire, et React-Three-Fiber/ThreeJS pour la visualisation 3D des planètes dans la rubrique information. 
+Pour le développement du projet, j'ai utilisé le framework React/NextJS pour le front-end, Zustand pour la gestion des états, du CSS classique pour la modélisation du système solaire, et React-Three-Fiber/ThreeJS pour la visualisation 3D des planètes dans la rubrique information. 
 
 Malheureusement, aucune API gratuite et non limitée en requête ne répondait à mes besoins en termes de données sur les planètes et les télescopes. J'ai donc créé ma propre API pour obtenir les données nécessaires à la réalisation de ce projet.
 
