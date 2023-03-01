@@ -14,11 +14,6 @@ Pour le développement du projet, j'ai utilisé le framework React/NextJS pour l
 
 Malheureusement, aucune API gratuite et non limitée en requête ne répondait à mes besoins en termes de données sur les planètes et les télescopes. J'ai donc créé ma propre API pour obtenir les données nécessaires à la réalisation de ce projet.
 
-### Technologies utilisées :
-
-NextJS ([![My Skills](https://skills.thijs.gg/icons?i=threejs)](https://nextjs.org/
-)), React-Three-Fiber ([![My Skills](https://skills.thijs.gg/icons?i=threejs)](https://docs.pmnd.rs/react-three-fiber/)) et Zustand (🐻).
-
 ### Partage :
 
 Pour ceux qui seraient intéressé, voici une liste des API / base de données relatives à l’astronomie : 
@@ -27,3 +22,8 @@ Pour ceux qui seraient intéressé, voici une liste des API / base de données r
 - [NASA Open APIs](https://api.nasa.gov/)
 - [OpenData du Système solaire](https://api.le-systeme-solaire.net/)
 - [Horizons API - NASA](https://ssd.jpl.nasa.gov/horizons/app.html#/)
+
+### Aperçu :
+
+![SpaceOdyssey](https://user-images.githubusercontent.com/59047879/222120725-71c6ab9b-eed4-4dd2-ad8c-fedf3df4e624.png)
+
