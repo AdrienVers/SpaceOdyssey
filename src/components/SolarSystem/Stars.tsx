@@ -71,9 +71,10 @@ const StarsGlobal = styled.div`
 		.star {
 			width: 100%;
 			height: 100%;
+
 			&:hover {
 				cursor: pointer;
-				box-shadow: 0 0 2px black, inset 0 0 1em green, 0 0 3em 1em green;
+				box-shadow: inset 0 0 1em green, 0 0 1em 0.5em green;
 			}
 			z-index: 90;
 
